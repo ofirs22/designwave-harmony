@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Wave } from "lucide-react";
+import { Waves } from "lucide-react";
 
 const Index = () => {
   return (
@@ -27,7 +27,7 @@ const Index = () => {
                 dir="rtl"
               />
               <button className="p-2">
-                <Wave className="h-5 w-5" />
+                <Waves className="h-5 w-5" />
               </button>
             </div>
           </div>
