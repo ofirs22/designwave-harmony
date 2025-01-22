@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import DietaryPreferences from "./pages/DietaryPreferences";
 import OrderDetails from "./pages/OrderDetails";
 import DeliveryReport from "./pages/DeliveryReport";
+import ProductManagement from "./pages/ProductManagement";
+import Cart from "./pages/Cart";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,8 @@ const App = () => (
           <Route path="/dietary-preferences" element={<DietaryPreferences />} />
           <Route path="/order-details" element={<OrderDetails />} />
           <Route path="/delivery-report" element={<DeliveryReport />} />
+          <Route path="/product-management" element={<ProductManagement />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
