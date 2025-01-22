@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/button";
 
 const OrderDetails = () => {
   return (
@@ -31,8 +32,6 @@ const OrderDetails = () => {
               <span>2</span>
             </div>
           </div>
-
-          {/* Add more items as needed */}
         </div>
 
         <div className="mt-6">

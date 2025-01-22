@@ -15,7 +15,7 @@ const DietaryPreferences = () => {
             <Button variant="outline" className="rounded-full">רגישות לגלוטן</Button>
             <Button variant="outline" className="rounded-full">צמחוני</Button>
             <Button variant="outline" className="rounded-full">טבעוני</Button>
-            <Button variant="primary" className="rounded-full bg-blue-500">רגישות ללקטוז</Button>
+            <Button variant="default" className="rounded-full bg-blue-500">רגישות ללקטוז</Button>
             <Button variant="outline" className="rounded-full">רגישות לדגים</Button>
             <Button variant="outline" className="rounded-full">רגישות לבוטנים</Button>
           </div>
