@@ -1,58 +1,71 @@
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft } from "lucide-react";
 
 const DeliveryReport = () => {
+  const deliveries = [
+    {
+      id: "000001278",
+      orderNumber: "001",
+      name: "הראל מיכאל",
+      phone: "050-1234567",
+      address: "אשדוד: שמואלי הנגר, 6"
+    },
+    {
+      id: "000001173",
+      orderNumber: "002",
+      name: "ישראלי ישראל",
+      phone: "050-1234567",
+      address: "ראשון לציון: הצפרירים 7, 41"
+    }
+  ];
+
   return (
-    <div className="container mx-auto p-4 text-right" dir="rtl">
-      <Card className="p-6">
-        <h1 className="text-xl font-bold mb-6">דוח Z - רבעוני</h1>
-        
-        <div className="grid gap-6">
-          <div className="flex justify-between border-b pb-4">
-            <div>
-              <div className="text-gray-600">תחילה</div>
-              <div>21:33 - 28/12/24</div>
+    <div className="min-h-screen bg-gray-50" dir="rtl">
+      <div className="container mx-auto px-4 py-8">
+        <Card className="max-w-4xl mx-auto">
+          <CardContent className="p-6">
+            <h1 className="text-2xl font-bold mb-6">כל ההזמנות</h1>
+            
+            <div className="space-y-4">
+              {deliveries.map((delivery) => (
+                <div 
+                  key={delivery.id}
+                  className="border rounded-lg p-4 hover:shadow-md transition-shadow"
+                >
+                  <div className="flex justify-between items-center">
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold">פרטי משלוח</span>
+                        <span className="text-blue-500">#{delivery.orderNumber}</span>
+                      </div>
+                      <div className="text-sm text-gray-600">מס׳ הזמנה {delivery.id}</div>
+                    </div>
+                    <Button variant="ghost" size="icon">
+                      <ArrowLeft className="h-4 w-4" />
+                    </Button>
+                  </div>
+                  
+                  <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <div className="text-sm text-gray-500">שם</div>
+                      <div>{delivery.name}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">מס׳ טלפון</div>
+                      <div>{delivery.phone}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">כתובת ודירה</div>
+                      <div>{delivery.address}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div>
-              <div className="text-gray-600">סיום</div>
-              <div>23:45 - 29/12/24</div>
-            </div>
-          </div>
-
-          <div>
-            <h2 className="font-semibold mb-3">פרטי העסק</h2>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="text-gray-600">שם</div>
-                <div>SmartBasket</div>
-              </div>
-              <div>
-                <div className="text-gray-600">כתובת</div>
-                <div>המסגר 4, תל-אביב</div>
-              </div>
-              <div>
-                <div className="text-gray-600">טלפון</div>
-                <div>054-3210123</div>
-              </div>
-              <div>
-                <div className="text-gray-600">ח.פ</div>
-                <div>9876543213</div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h2 className="font-semibold mb-3">נתוני משלוח</h2>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="text-center p-4 bg-gray-50 rounded">
-                <div className="font-medium">SmartBasket</div>
-                <div className="text-sm text-gray-600">157 מס׳ משלוחים</div>
-                <div className="text-sm text-gray-600">₪340 סכום כולל</div>
-              </div>
-              {/* Add more delivery stats as needed */}
-            </div>
-          </div>
-        </div>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 };
