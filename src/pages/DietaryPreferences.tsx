@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Layout from "@/components/Layout";
 
 const DietaryPreferences = () => {
   return (
-    <div className="min-h-screen bg-gray-50" dir="rtl">
+    <Layout>
       <div className="container mx-auto px-4 py-8">
         <Card className="max-w-4xl mx-auto">
           <CardContent className="p-6">
@@ -31,7 +32,7 @@ const DietaryPreferences = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </Layout>
   );
 };
 
