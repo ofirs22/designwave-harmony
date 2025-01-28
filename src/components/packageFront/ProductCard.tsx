@@ -27,8 +27,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div className={`flex flex-col ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} bg-white shadow-lg rounded-lg p-4 md:p-10 gap-4 md:gap-8 w-full`}>
-      {/* Image Section */}
-      <div className="w-full md:w-[17.438rem] h-[12rem] md:h-[17.438rem] bg-white shadow-md rounded-lg overflow-hidden">
+      {/* Image Section with Heart Icon */}
+      <div className="relative w-full md:w-[17.438rem] h-[12rem] md:h-[17.438rem] bg-white shadow-md rounded-lg overflow-hidden">
+        <button className="absolute top-4 right-4 flex items-center justify-center w-12 h-12 bg-white shadow-md rounded-full z-10">
+          <FontAwesomeIcon icon={faHeart} className="text-[#05172C] text-lg" />
+        </button>
         <img
           src={image}
           alt={title}
@@ -64,11 +67,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {description}
         </p>
 
-        {/* Actions */}
-        <div className="flex flex-wrap items-center gap-4 mt-4">
-          <button className="flex items-center justify-center w-12 h-12 bg-white shadow-md rounded-full">
-            <FontAwesomeIcon icon={faHeart} className="text-[#05172C] text-lg" />
-          </button>
+        {/* Actions - Stacked Buttons */}
+        <div className="flex flex-col gap-4 mt-4">
           <button 
             onClick={() => onToggle(id)}
             className="flex items-center justify-center px-4 md:px-8 py-3 border border-[#778080] rounded-full text-[#778080] text-base md:text-[1.25rem] font-semibold" 
