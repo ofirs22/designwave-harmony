@@ -20,15 +20,16 @@ const PackageList: React.FC = () => {
             המארזים השווים שלנו
           </h3>
         </div>
-        <div className="flex flex-col gap-4 md:gap-8 items-center">
+        <div className="flex flex-col gap-4 md:gap-8 items-center max-w-full">
           {packageData.map((packageItem, index) => (
-            <ProductCard 
-              key={packageItem.id}
-              {...packageItem}
-              isReversed={index % 2 === 1}
-              isOpen={openCardId === packageItem.id}
-              onToggle={handleToggle}
-            />
+            <div key={packageItem.id} className="w-full px-4 sm:px-6 md:px-8">
+              <ProductCard 
+                {...packageItem}
+                isReversed={index % 2 === 1}
+                isOpen={openCardId === packageItem.id}
+                onToggle={handleToggle}
+              />
+            </div>
           ))}
         </div>
       </div>
