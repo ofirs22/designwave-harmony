@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPhone, faAngleDown, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
 
 const Menu: React.FC = () => {
@@ -31,30 +32,47 @@ const Menu: React.FC = () => {
           <div className="flex items-center justify-between py-8">
             <div className="flex items-center gap-14">
               {/* Logo */}
-              <div className="w-[173px] h-[65px]">
+              <Link to="/" className="w-[173px] h-[65px]">
                 <img
                   src="/assets/header-logo.png"
                   alt="Logo"
                   width={173}
                   height={65}
                 />
-              </div>
+              </Link>
 
               {/* Desktop Navigation */}
               <nav className="hidden lg:flex items-center gap-10">
-                {['ראשי', 'חנות', 'מבצעים', 'מוצרים', 'אודות'].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3 cursor-pointer">
-                    <span className="text-[#26465A] font-semibold text-base">
-                      {item}
-                    </span>
-                    {item !== 'אודות' && (
-                      <FontAwesomeIcon 
-                        icon={faAngleDown} 
-                        className="text-[#26465A] text-sm"
-                      />
-                    )}
-                  </div>
-                ))}
+                <Link to="/" className="flex items-center gap-3 cursor-pointer">
+                  <span className="text-[#26465A] font-semibold text-base">
+                    ראשי
+                  </span>
+                  <FontAwesomeIcon icon={faAngleDown} className="text-[#26465A] text-sm" />
+                </Link>
+                <Link to="/packages" className="flex items-center gap-3 cursor-pointer">
+                  <span className="text-[#26465A] font-semibold text-base">
+                    חנות
+                  </span>
+                  <FontAwesomeIcon icon={faAngleDown} className="text-[#26465A] text-sm" />
+                </Link>
+                <div className="flex items-center gap-3 cursor-pointer">
+                  <span className="text-[#26465A] font-semibold text-base">
+                    מבצעים
+                  </span>
+                  <FontAwesomeIcon icon={faAngleDown} className="text-[#26465A] text-sm" />
+                </div>
+                <div className="flex items-center gap-3 cursor-pointer">
+                  <span className="text-[#26465A] font-semibold text-base">
+                    מוצרים
+                  </span>
+                  <FontAwesomeIcon icon={faAngleDown} className="text-[#26465A] text-sm" />
+                </div>
+                <Link to="/login" className="text-[#26465A] font-semibold text-base">
+                  התחברות
+                </Link>
+                <Link to="/signup" className="text-[#26465A] font-semibold text-base">
+                  הרשמה
+                </Link>
               </nav>
             </div>
 

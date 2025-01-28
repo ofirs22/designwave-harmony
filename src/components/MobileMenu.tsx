@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faUser, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const MobileMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,11 +39,13 @@ const MobileMenu: React.FC = () => {
       >
         <div className="p-4 border-b">
           <div className="flex justify-between items-center">
-            <img 
-              src="/assets/header-logo.png" 
-              alt="Logo"
-              className="h-8"
-            />
+            <Link to="/">
+              <img 
+                src="/assets/header-logo.png" 
+                alt="Logo"
+                className="h-8"
+              />
+            </Link>
             <div className="flex gap-4">
               <button
                 className="relative rounded-full w-10 h-10 bg-white shadow-md flex items-center justify-center"
@@ -77,10 +80,10 @@ const MobileMenu: React.FC = () => {
         </div>
         
         <nav className="flex flex-col p-4">
-          <a href="/" className="py-2 text-gray-700 hover:text-[#00BAFF]">ראשי</a>
-          <a href="/products" className="py-2 text-gray-700 hover:text-[#00BAFF]">מוצרים</a>
-          <a href="/about" className="py-2 text-gray-700 hover:text-[#00BAFF]">אודות</a>
-          <a href="/contact" className="py-2 text-gray-700 hover:text-[#00BAFF]">צור קשר</a>
+          <Link to="/" className="py-2 text-gray-700 hover:text-[#00BAFF]">ראשי</Link>
+          <Link to="/packages" className="py-2 text-gray-700 hover:text-[#00BAFF]">חנות</Link>
+          <Link to="/login" className="py-2 text-gray-700 hover:text-[#00BAFF]">התחברות</Link>
+          <Link to="/signup" className="py-2 text-gray-700 hover:text-[#00BAFF]">הרשמה</Link>
         </nav>
       </div>
     </div>
