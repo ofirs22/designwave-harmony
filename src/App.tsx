@@ -1,34 +1,27 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import DietaryPreferences from "./pages/DietaryPreferences";
-import OrderDetails from "./pages/OrderDetails";
-import DeliveryReport from "./pages/DeliveryReport";
-import ProductManagement from "./pages/ProductManagement";
-import Cart from "./pages/Cart";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
+import Home from './pages/front/Home';
+import Packages from './pages/front/Packages';
 
-const queryClient = new QueryClient();
+const App: React.FC = () => {
+  // Temporary userId for development - in production this should come from auth
+  const userId = "temp-user-id";
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+  return (
+    <Router>
+      <Layout userId={userId}>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/dietary-preferences" element={<DietaryPreferences />} />
-          <Route path="/order-details" element={<OrderDetails />} />
-          <Route path="/delivery-report" element={<DeliveryReport />} />
-          <Route path="/product-management" element={<ProductManagement />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/packages" element={<Packages />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      </Layout>
+    </Router>
+  );
+};
 
 export default App;
