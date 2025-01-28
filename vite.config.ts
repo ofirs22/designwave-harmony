@@ -11,7 +11,7 @@ export default defineConfig({
     process.env.NODE_ENV === 'development' && componentTagger(),
   ].filter(Boolean),
   server: {
-    allowedHosts: ["1e0016f0-8b53-46e7-ac88-a03fdf0a8520.lovableproject.com"],
+    allowedHosts: ["c398e967-b49b-4a26-ba39-d9ac451091be.lovableproject.com"],
     host: "::",
     port: 8080,
   },
